@@ -2,7 +2,7 @@
 
 Other useful resources:
 
-- [Growthtop Docs](https://docs.terra.money/index.html)
+- [Growthtop Docs](https://github.com/akjj004/growthtop-docs)
 
 # Getting Started with Create React App
 
