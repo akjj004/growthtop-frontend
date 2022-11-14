@@ -39,9 +39,9 @@ export default function Home({ searchProducts }) {
           gridGap="5"
           gridTemplateColumns="repeat( auto-fit, minmax(300px, 1fr) )"
         >
-          {searchProducts.map((el) => (
+          {/* {searchProducts.map((el) => (
             <Products products={el} key={el.id} />
-          ))}
+          ))} */}
         </Grid>
       </Flex>
     </Box>
@@ -53,7 +53,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      searchProducts: searchProduct?.results,
+      searchProducts: searchProduct,
     },
   };
 }
