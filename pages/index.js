@@ -19,37 +19,25 @@ const Banner = ({ name, image }) => (
 );
 
 export default function Home({ searchProducts }) {
-  console.log(searchProducts);
+  // console.log(searchProducts);
   return (
     <Box>
       <Banner
         name="Product preview"
         image="https://m.media-amazon.com/images/I/61vpfTemIbL.jpg"
       />
-      <Flex
-        flexWrap="wrap"
-        w="420px"
-        p="5"
-        paddingTop="0px"
-        justifyContent="flex-start"
-        cursor="pointer"
-      >
-        <Grid
-          w="full"
-          gridGap="5"
-          gridTemplateColumns="repeat( auto-fit, minmax(300px, 1fr) )"
-        >
-          {/* {searchProducts.map((el) => (
-            <Products products={el} key={el.id} />
-          ))} */}
-        </Grid>
+      <Flex flexWrap="wrap">
+        {/*Fetch the properties and map over them...*/}
+        {searchProducts.map((products, index) => (
+          <Products key={index} products={products} />
+        ))}
       </Flex>
     </Box>
   );
 }
 
 export async function getStaticProps() {
-  const searchProduct = await fetchApi(`${baseUrl}/search/keyboards`);
+  const searchProduct = await fetchApi(`${baseUrl}/search`);
 
   return {
     props: {
