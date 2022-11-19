@@ -19,12 +19,12 @@ const Banner = ({ name, image }) => (
 );
 
 export default function Home({ searchProducts }) {
-  // console.log(searchProducts);
+  console.log(searchProducts);
   return (
     <Box>
       <Banner
-        name="Product preview"
-        image="https://m.media-amazon.com/images/I/61vpfTemIbL.jpg"
+        name="Kategoria"
+        image="https://images-na.ssl-images-amazon.com/images/I/610LdTvXyFL._AC_UL300_SR300,200_.jpg"
       />
       <Flex flexWrap="wrap">
         {/*Fetch the properties and map over them...*/}
@@ -37,7 +37,7 @@ export default function Home({ searchProducts }) {
 }
 
 export async function getStaticProps() {
-  const searchProduct = await fetchApi(`${baseUrl}/search`);
+  const searchProduct = await fetchApi(`${baseUrl}/products`);
 
   return {
     props: {
