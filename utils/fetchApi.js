@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const baseUrl = "http://127.0.0.1:9000";
+export const baseUrl = "https://growthtop-backend-production.up.railway.app";
 
 export const fetchApi = async (url) => {
   const { data } = await axios.get(url);
