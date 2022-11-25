@@ -7,16 +7,7 @@ import { GoVerified } from "react-icons/go";
 // import DefaultImage from "../assets/images/house.jpeg";
 
 const Products = ({
-  products: {
-    name,
-    image,
-    position,
-    price,
-    is_best_seller,
-    stars,
-    thumbnail,
-    numberOfOffers,
-  },
+  products: { name, position, price, rating, thumbnail, numberOfOffers },
 }) => (
   <Link href={`/results/${position}`} passHref>
     <Flex
@@ -41,26 +32,26 @@ const Products = ({
             </Text>
           </Flex>
         </Flex>
-        {/* <Flex
+        <Flex
           alignItems="center"
           p="1"
           justifyContent="space-between"
           w="250px"
           color="blue.400"
         >
-          {[...Array(5)].map((star, i) => {
+          {[...Array(5)].map((rating, i) => {
             return (
               <FaStar
                 key={i}
-                color={i < Math.round(stars) ? "#ffc107" : "#F5DEB3"}
+                color={i < rating ? "#ffc107" : "#F5DEB3"}
                 size={20}
               />
             );
           })}
           <Badge borderRadius="full" px="2" colorScheme="grey">
-            {stars}
+            {rating}
           </Badge>
-        </Flex> */}
+        </Flex>
         <Text fontSize="lg">
           {name.length > 30 ? name.substring(0, 30) + "..." : name}
         </Text>
