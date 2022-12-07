@@ -141,14 +141,28 @@ export const filterData = [
     placeholder: "Categories",
     queryName: "category",
   },
+  {
+    items: [
+      { name: "Lowest Price", value: "price-asc" },
+      { name: "Highest Price", value: "price-des" },
+      { name: "Newest", value: "date-asc" },
+      { name: "Oldest", value: "date-desc" },
+    ],
+    placeholder: "Sort",
+    queryName: "sort",
+  },
 ];
 
 export const getFilterValues = (filterValues) => {
-  const { category } = filterValues;
+  const { category, sort } = filterValues;
   const values = [
     {
       name: "category",
       value: category,
+    },
+    {
+      name: "sort",
+      value: sort,
     },
   ];
   return values;

@@ -12,18 +12,32 @@ import noresult from "../assets/images/noresult.svg";
 import Products from "../components/Products";
 
 const Search = ({ properties }) => {
-  console.log(properties, "ok");
   const [searchFilters, setSearchFilters] = useState(false);
   const router = useRouter();
+  const { sort } = router.query; // get the sort parameter from the query string
+  // sort the items array using the sortBy parameter
+  properties.sort((a, b) => {
+    // console.log(sort, "??");
+    if (sort === "price-des") {
+      // sort by price in descending order
+      return b.price - a.price;
+    } else if (sort === "price-asc") {
+      // sort by price in ascending order
+
+      return a.price - b.price;
+    } else {
+      return 0;
+    }
+  });
 
   return (
     <Box>
       <Flex
         onClick={() => setSearchFilters(!searchFilters)}
         cursor="pointer"
-        bg="gray.100"
+        bg="blue.400"
         borderBottom="1px"
-        borderColor="gray.200"
+        borderColor="blue.400"
         p="2"
         fontWeight="black"
         fontSize="lg"
@@ -35,36 +49,23 @@ const Search = ({ properties }) => {
       </Flex>
       {searchFilters && <SearchFilters />}
       <Text fontSize="2xl" p="4" fontWeight="bold">
-        Products {router.query.purpose}
+        Category: {router.query.category}
       </Text>
       <Flex flexWrap="wrap">
         {properties.map((properties, index) => (
           <Products key={index} products={properties} />
         ))}
       </Flex>
-      {/* {searchProduct.length === 0 && (
-        <Flex
-          justifyContent="center"
-          alignItems="center"
-          flexDir="column"
-          marginTop="5"
-          marginBottom="5"
-        >
-          <Image src={noresult} />
-          <Text fontSize="xl" marginTop="3">
-            No Result Found.
-          </Text>
-        </Flex>
-      )} */}
     </Box>
   );
 };
 
 export async function getServerSideProps({ query }) {
   const category = query.category || "1";
+  const sort = query.sort || "price";
 
   const searchProduct = await fetchApi(
-    `${baseUrl}/api/products?category=${category}`
+    `${baseUrl}/api/products?category=${category}&sort=${sort}`
   );
 
   return {

@@ -56,7 +56,7 @@ export default function SearchFilters() {
   }, [searchTerm]);
 
   return (
-    <Flex bg="gray.100" p="4" justifyContent="center" flexWrap="wrap">
+    <Flex bg="blue.300" p="4" justifyContent="center" flexWrap="wrap">
       {filters?.map((filter) => (
         <Box key={filter.queryName}>
           <Select
@@ -79,7 +79,7 @@ export default function SearchFilters() {
         <Button
           onClick={() => setShowLocations(!showLocations)}
           border="1px"
-          borderColor="gray.200"
+          borderColor="blue.200"
           marginTop="2"
         >
           Search Location
@@ -90,7 +90,7 @@ export default function SearchFilters() {
               placeholder="Type Here"
               value={searchTerm}
               w="300px"
-              focusBorderColor="gray.300"
+              focusBorderColor="blue.300"
               onChange={(e) => setSearchTerm(e.target.value)}
             />
             {searchTerm !== "" && (
@@ -120,10 +120,10 @@ export default function SearchFilters() {
                   >
                     <Text
                       cursor="pointer"
-                      bg="gray.200"
+                      bg="blue.200"
                       p="2"
                       borderBottom="1px"
-                      borderColor="gray.100"
+                      borderColor="blue.100"
                     >
                       {location.name}
                     </Text>
