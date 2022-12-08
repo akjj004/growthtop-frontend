@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <GoogleAnalytics id="G-TE2S628LFT" />
+        <GoogleAnalytics id="UA-TE2S628LFT-G" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
