@@ -4,9 +4,8 @@ import NProgress from "nprogress";
 import Layout from "../components/Layout";
 // import chakra provider
 import { ChakraProvider } from "@chakra-ui/react";
-import { GoogleAnalytics } from "next-google-analytics";
-import { getEnv } from "next/config";
-const { GA_MEASUREMENT_ID } = getEnv();
+
+import Script from "next/script";
 function MyApp({ Component, pageProps }) {
   NProgress.configure({ showSpinner: false });
   Router.events.on("routeChangeStart", () => {
@@ -29,7 +28,21 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <ChakraProvider>
         <Layout>
-          <GoogleAnalytics id={GA_MEASUREMENT_ID} trackPageViews />
+          <Script
+            strategy="lazyOnload"
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+          />
+
+          <Script id="google-analytics-script" strategy="lazyOnload">
+            {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+          page_path: window.location.pathname,
+          });
+    `}
+          </Script>
           <Component {...pageProps} />
         </Layout>
       </ChakraProvider>
