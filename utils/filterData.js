@@ -145,8 +145,6 @@ export const filterData = [
     items: [
       { name: "Lowest Price", value: "price-asc" },
       { name: "Highest Price", value: "price-des" },
-      { name: "Newest", value: "date-asc" },
-      { name: "Oldest", value: "date-desc" },
     ],
     placeholder: "Sort",
     queryName: "sort",

@@ -12,9 +12,14 @@ import noresult from "../assets/images/noresult.svg";
 import Products from "../components/Products";
 
 const Search = ({ properties }) => {
+  console.log(properties, "OK");
   const [searchFilters, setSearchFilters] = useState(false);
   const router = useRouter();
+  //descructure
+  const { rating, reviewCount, credibility } = { properties };
+  const { category } = router.query;
   const { sort } = router.query; // get the sort parameter from the query string
+
   // sort the items array using the sortBy parameter
   properties.sort((a, b) => {
     // console.log(sort, "??");
@@ -23,12 +28,35 @@ const Search = ({ properties }) => {
       return b.price - a.price;
     } else if (sort === "price-asc") {
       // sort by price in ascending order
-
       return a.price - b.price;
     } else {
       return 0;
     }
   });
+
+  // function calculateCredibilityPoints(rating, reviewCount, credibility) {
+  //   // calculate the credibility points
+  //   var decimalReviewCount = reviewCount / 100;
+  //   var decimalCredibility = credibility / 100;
+
+  //   let credibilityPoints =
+  //     (rating * decimalReviewCount * decimalCredibility) / 100;
+  //   credibilityPoints += "%";
+  //   return credibilityPoints;
+  // }
+
+  // for (let { rating, reviewCount, credibility } of properties) {
+  //   // calculate the credibility points
+  //   let credibilityPoints = calculateCredibilityPoints(
+  //     rating,
+  //     reviewCount,
+  //     credibility
+  //   );
+
+  //   properties.forEach(function (properties) {
+  //     properties.credibilityPoints = credibilityPoints;
+  //   });
+  // }
 
   return (
     <Box>
