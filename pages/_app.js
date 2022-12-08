@@ -4,6 +4,7 @@ import NProgress from "nprogress";
 import Layout from "../components/Layout";
 // import chakra provider
 import { ChakraProvider } from "@chakra-ui/react";
+import { GoogleAnalytics } from "next-google-analytics";
 function MyApp({ Component, pageProps }) {
   NProgress.configure({ showSpinner: false });
   Router.events.on("routeChangeStart", () => {
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <GoogleAnalytics id="G-TE2S628LFT" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
