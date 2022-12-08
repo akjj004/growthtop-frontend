@@ -5,7 +5,8 @@ import { CheckIcon } from "@chakra-ui/icons";
 
 import { filterData, getFilterValues } from "../utils/filterData";
 import { baseUrl, fetchApi } from "../utils/fetchApi";
-const SearchFilters = ({ categories }) => {
+
+const SearchFilters = ({ topCategories }) => {
   const [filters] = useState(filterData);
 
   const router = useRouter();
@@ -30,16 +31,16 @@ const SearchFilters = ({ categories }) => {
     router.push(`?category=${value}`);
   };
 
-  // Sort the categories by credibility percentage in descending order
-  const sortedCategories = categories.sort(
-    (a, b) => b.credibility - a.credibility
-  );
+  // // Sort the categories by credibility percentage in descending order
+  // const sortedCategories = categories.sort(
+  //   (a, b) => b.credibility - a.credibility
+  // );
 
-  // Get the top 5 categories
-  const topCategories = sortedCategories.slice(0, 5);
+  // // Get the top 5 categories
+  // const topCategories = sortedCategories.slice(0, 5);
 
-  // Get the category with the maximum credibility percentage
-  const maxCredibilityCategory = topCategories[0];
+  // // Get the category with the maximum credibility percentage
+  // const maxCredibilityCategory = topCategories[0];
 
   return (
     <Flex bg="blue.300" p="4" justifyContent="center" flexWrap="wrap">
