@@ -11,8 +11,7 @@ import { baseUrl, fetchApi } from "../utils/fetchApi";
 import noresult from "../assets/images/noresult.svg";
 import Products from "../components/Products";
 
-const Search = ({ properties }) => {
-  console.log(properties, "OK");
+const Search = ({ properties, categories }) => {
   const [searchFilters, setSearchFilters] = useState(false);
   const router = useRouter();
   //descructure
@@ -75,7 +74,7 @@ const Search = ({ properties }) => {
         <Text>Search Products by filters</Text>
         <Icon paddingLeft="2" w="7" as={BsFilter} />
       </Flex>
-      {searchFilters && <SearchFilters />}
+      {searchFilters && <SearchFilters categories={categories} />}
       <Text fontSize="2xl" p="4" fontWeight="bold">
         Category: {router.query.category}
       </Text>
@@ -96,9 +95,12 @@ export async function getServerSideProps({ query }) {
     `${baseUrl}/api/products?category=${category}&sort=${sort}`
   );
 
+  const topCategories = await fetchApi(`${baseUrl}/api/categories`);
+
   return {
     props: {
       properties: searchProduct,
+      categories: topCategories,
     },
   };
 }

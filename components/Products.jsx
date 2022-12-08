@@ -15,7 +15,6 @@ const Products = ({
     thumbnail,
     numberOfOffers,
     url,
-    reviewCount,
     refreshed_at,
   },
 }) => {
@@ -44,9 +43,6 @@ const Products = ({
             <Flex alignItems="center">
               <Box paddingRight="3" color="green.400">
                 Stock: {numberOfOffers}
-              </Box>
-              <Box paddingRight="3" color="blue.400">
-                ReviewCount: {reviewCount}
               </Box>
               <Text fontWeight="bold" fontSize="lg">
                 USD {price}
