@@ -31,17 +31,6 @@ const SearchFilters = ({ topCategories }) => {
     router.push(`?category=${value}`);
   };
 
-  // // Sort the categories by credibility percentage in descending order
-  // const sortedCategories = categories.sort(
-  //   (a, b) => b.credibility - a.credibility
-  // );
-
-  // // Get the top 5 categories
-  // const topCategories = sortedCategories.slice(0, 5);
-
-  // // Get the category with the maximum credibility percentage
-  // const maxCredibilityCategory = topCategories[0];
-
   return (
     <Flex bg="blue.300" p="4" justifyContent="center" flexWrap="wrap">
       {filters?.map((filter) => (
@@ -73,16 +62,6 @@ const SearchFilters = ({ topCategories }) => {
                   value={category.category}
                 >
                   {category.category_name}
-
-                  {category.credibility === 100 && (
-                    <Box
-                      as={CheckIcon}
-                      name="CheckIcon"
-                      size="10px"
-                      mx={3}
-                      color="grey.200"
-                    />
-                  )}
                 </Checkbox>
               </Box>
             ))}
