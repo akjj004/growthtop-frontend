@@ -2,152 +2,153 @@ export const filterData = [
   {
     items: [
       {
-        name: "Amazon-Devices-Accessories",
-        value: "Amazon-Devices-Accessories",
+        name: 'Amazon-Devices-Accessories',
+        value: 'Amazon-Devices-Accessories',
       },
       {
-        name: "Amazon-Launchpad",
-        value: "Amazon-Launchpad",
+        name: 'Amazon-Launchpad',
+        value: 'Amazon-Launchpad',
       },
       {
-        name: "Amazon-Renewed",
-        value: "Amazon-Renewed",
+        name: 'Amazon-Renewed',
+        value: 'Amazon-Renewed',
       },
       {
-        name: "Appliances",
-        value: "Appliances",
+        name: 'Appliances',
+        value: 'Appliances',
       },
       {
-        name: "Apps-Games",
-        value: "Apps-Games",
+        name: 'Apps-Games',
+        value: 'Apps-Games',
       },
       {
-        name: "Arts-Crafts-Sewing",
-        value: "Arts-Crafts-Sewing",
+        name: 'Arts-Crafts-Sewing',
+        value: 'Arts-Crafts-Sewing',
       },
       {
-        name: "Audible-Books-Originals",
-        value: "Audible-Books-Originals",
+        name: 'Audible-Books-Originals',
+        value: 'Audible-Books-Originals',
       },
       {
-        name: "Automotive",
-        value: "Automotive",
+        name: 'Automotive',
+        value: 'Automotive',
       },
       {
-        name: "Baby",
-        value: "Baby",
+        name: 'Baby',
+        value: 'Baby',
       },
       {
-        name: "Beauty-Personal-Care",
-        value: "Beauty-Personal-Care",
+        name: 'Beauty-Personal-Care',
+        value: 'Beauty-Personal-Care',
       },
       {
-        name: "Books",
-        value: "Books",
+        name: 'Books',
+        value: 'Books',
       },
       {
-        name: "Camera-Photo-Products",
-        value: "Camera-Photo-Products",
+        name: 'Camera-Photo-Products',
+        value: 'Camera-Photo-Products',
       },
       {
-        name: "Cell-Phones-Accessories",
-        value: "Cell-Phones-Accessories",
+        name: 'Cell-Phones-Accessories',
+        value: 'Cell-Phones-Accessories',
       },
       {
-        name: "Computers-Accessories",
-        value: "Computers-Accessories",
+        name: 'Computers-Accessories',
+        value: 'Computers-Accessories',
       },
       {
-        name: "Clothing-Shoes-Jewelry",
-        value: "Clothing-Shoes-Jewelry",
+        name: 'Clothing-Shoes-Jewelry',
+        value: 'Clothing-Shoes-Jewelry',
       },
       {
-        name: "Digital-Educational-Resources",
-        value: "Digital-Educational-Resources",
+        name: 'Digital-Educational-Resources',
+        value: 'Digital-Educational-Resources',
       },
       {
-        name: "Electronics",
-        value: "Electronics",
+        name: 'Electronics',
+        value: 'Electronics',
       },
       {
-        name: "Gift-Cards",
-        value: "Gift-Cards",
+        name: 'Gift-Cards',
+        value: 'Gift-Cards',
       },
       {
-        name: "Grocery-Gourmet-Food",
-        value: "Grocery-Gourmet-Food",
+        name: 'Grocery-Gourmet-Food',
+        value: 'Grocery-Gourmet-Food',
       },
       {
-        name: "Handmade-Products",
-        value: "Handmade-Products",
+        name: 'Handmade-Products',
+        value: 'Handmade-Products',
       },
       {
-        name: "Health-Household",
-        value: "Health-Household",
+        name: 'Health-Household',
+        value: 'Health-Household',
       },
       {
-        name: "Kindle-Store",
-        value: "Kindle-Store",
+        name: 'Kindle-Store',
+        value: 'Kindle-Store',
       },
       {
-        name: "Kitchen-Dining",
-        value: "Kitchen-Dining",
+        name: 'Kitchen-Dining',
+        value: 'Kitchen-Dining',
       },
       {
-        name: "Magazine-Subscriptions",
-        value: "Magazine-Subscriptions",
+        name: 'Magazine-Subscriptions',
+        value: 'Magazine-Subscriptions',
       },
       {
-        name: "Movies-TV",
-        value: "Movies-TV",
+        name: 'Movies-TV',
+        value: 'Movies-TV',
       },
       {
-        name: "Musical-Instruments",
-        value: "Musical-Instruments",
+        name: 'Musical-Instruments',
+        value: 'Musical-Instruments',
       },
       {
-        name: "Office-Products",
-        value: "Office-Products",
+        name: 'Office-Products',
+        value: 'Office-Products',
       },
       {
-        name: "Patio-Lawn-Garden",
-        value: "Patio-Lawn-Garden",
+        name: 'Patio-Lawn-Garden',
+        value: 'Patio-Lawn-Garden',
       },
       {
-        name: "Pet-Supplies",
-        value: "Pet-Supplies",
+        name: 'Pet-Supplies',
+        value: 'Pet-Supplies',
       },
       {
-        name: "Software",
-        value: "Software",
+        name: 'Software',
+        value: 'Software',
       },
       {
-        name: "Sports-Outdoors",
-        value: "Sports-Outdoors",
+        name: 'Sports-Outdoors',
+        value: 'Sports-Outdoors',
       },
       {
-        name: "Sports-Collectibles",
-        value: "Sports-Collectibles",
+        name: 'Sports-Collectibles',
+        value: 'Sports-Collectibles',
       },
       {
-        name: "Toys-Games",
-        value: "Toys-Games",
+        name: 'Toys-Games',
+        value: 'Toys-Games',
       },
       {
-        name: "Video-Games",
-        value: "Video-Games",
+        name: 'Video-Games',
+        value: 'Video-Games',
       },
     ],
-    placeholder: "Categories",
-    queryName: "category",
+    placeholder: 'Categories',
+    queryName: 'category',
   },
   {
     items: [
-      { name: "Lowest Price", value: "price-asc" },
-      { name: "Highest Price", value: "price-des" },
+      { name: 'Credibility', value: 'cred-des' },
+      { name: 'Lowest Price', value: 'price-asc' },
+      { name: 'Highest Price', value: 'price-des' },
     ],
-    placeholder: "Sort",
-    queryName: "sort",
+    placeholder: 'Sort',
+    queryName: 'sort',
   },
 ];
 
@@ -155,13 +156,14 @@ export const getFilterValues = (filterValues) => {
   const { category, sort } = filterValues;
   const values = [
     {
-      name: "category",
+      name: 'category',
       value: category,
     },
     {
-      name: "sort",
+      name: 'sort',
       value: sort,
     },
   ];
   return values;
 };
+

@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { Flex, Select, Checkbox, Box, Stack, Icon } from "@chakra-ui/react";
-import { useRouter } from "next/router";
-import { CheckIcon } from "@chakra-ui/icons";
+import { useEffect, useState } from 'react';
+import { Flex, Select, Checkbox, Box, Stack, Icon } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import { CheckIcon } from '@chakra-ui/icons';
 
-import { filterData, getFilterValues } from "../utils/filterData";
-import { baseUrl, fetchApi } from "../utils/fetchApi";
+import { filterData, getFilterValues } from '../utils/filterData';
+import { baseUrl, fetchApi } from '../utils/fetchApi';
 
 const SearchFilters = ({ topCategories }) => {
   const [filters] = useState(filterData);
@@ -36,9 +36,7 @@ const SearchFilters = ({ topCategories }) => {
       {filters?.map((filter) => (
         <Box key={filter.queryName}>
           <Select
-            onChange={(e) =>
-              searchProperties({ [filter.queryName]: e.target.value })
-            }
+            onChange={(e) => searchProperties({ [filter.queryName]: e.target.value })}
             placeholder={filter.placeholder}
             w="fit-content"
             p="2"
@@ -51,7 +49,7 @@ const SearchFilters = ({ topCategories }) => {
           </Select>
         </Box>
       ))}
-      <>
+      {/* <>
         <Flex alignItems="center">
           <Flex alignItems="center">
             {topCategories.map((category) => (
@@ -67,9 +65,10 @@ const SearchFilters = ({ topCategories }) => {
             ))}
           </Flex>
         </Flex>
-      </>
+      </> */}
     </Flex>
   );
 };
 
 export default SearchFilters;
+
