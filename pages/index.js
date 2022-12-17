@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
-import { Flex, Box, Text, Icon } from '@chakra-ui/react';
+import { Flex as Grid, Box, Text, Icon, Divider, SimpleGrid, Center } from '@chakra-ui/react';
 import { BsFilter } from 'react-icons/bs';
 import { PieChart, Pie, Tooltip, Legend } from 'recharts';
 import SearchFilters from '../components/SearchFilters';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
-import noresult from '../assets/images/noresult.svg';
 import Products from '../components/Products';
 
 const Search = ({ properties, categories }) => {
@@ -65,7 +63,7 @@ const Search = ({ properties, categories }) => {
 
   return (
     <Box>
-      <Flex
+      <Grid
         onClick={() => setSearchFilters(!searchFilters)}
         cursor="pointer"
         bg="blue.400"
@@ -79,7 +77,7 @@ const Search = ({ properties, categories }) => {
       >
         <Text>Search Products by filters</Text>
         <Icon paddingLeft="2" w="7" as={BsFilter} />
-      </Flex>
+      </Grid>
       {(searchFilters || currentPath == '/') && (
         <SearchFilters categories={categories} sortedCategories={sortedCategories} topCategories={topCategories} />
       )}
@@ -88,20 +86,25 @@ const Search = ({ properties, categories }) => {
       </Text>
 
       {(searchFilters || currentPath == '/') && (
-        <Flex p="4" justifyContent="center" flexDirection="column" alignItems="center">
+        <Grid p="4" justifyContent="center" flexDirection="column" alignItems="center">
           <Text fontSize="2xl">Most valuable categories right now</Text>
           <PieChart width={400} height={400}>
             <Pie dataKey="value" data={pieData} label fill="#63b3ed" />
             <Tooltip />
             <Legend />
           </PieChart>
-        </Flex>
+
+          <Divider my={3} />
+        </Grid>
       )}
-      <Flex flexWrap="wrap">
-        {properties.map((product, index) => (
-          <Products key={index} products={product} />
-        ))}
-      </Flex>
+
+      <Center px={3}>
+        <SimpleGrid columns={[1, 2, 3]} spacing="50px" rowGap={9}>
+          {properties.map((product, index) => (
+            <Products key={index} products={product} index={index} />
+          ))}
+        </SimpleGrid>
+      </Center>
     </Box>
   );
 };

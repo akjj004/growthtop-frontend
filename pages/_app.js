@@ -1,18 +1,18 @@
-import Router from "next/router";
-import Head from "next/head";
-import NProgress from "nprogress";
-import Layout from "../components/Layout";
+import Router from 'next/router';
+import Head from 'next/head';
+import NProgress from 'nprogress';
+import Layout from '../components/Layout';
 // import chakra provider
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider } from '@chakra-ui/react';
 
-import Script from "next/script";
+import Script from 'next/script';
 function MyApp({ Component, pageProps }) {
   NProgress.configure({ showSpinner: false });
-  Router.events.on("routeChangeStart", () => {
+  Router.events.on('routeChangeStart', () => {
     NProgress.start();
   });
 
-  Router.events.on("routeChangeComplete", () => {
+  Router.events.on('routeChangeComplete', () => {
     NProgress.done();
   });
   return (
@@ -51,3 +51,4 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+

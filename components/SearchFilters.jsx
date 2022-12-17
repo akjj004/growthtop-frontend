@@ -49,6 +49,7 @@ const SearchFilters = ({ topCategories }) => {
           </Select>
         </Box>
       ))}
+
       {/* <>
         <Flex alignItems="center">
           <Flex alignItems="center">
